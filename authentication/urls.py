@@ -1,5 +1,5 @@
 from django.conf.urls import url, include
-from p4backend.authentication.views import RegistrationAPIView, LoginAPIView, UserListViewSet
+from authentication.views import RegistrationAPIView, LoginAPIView, UserListViewSet
 
 urlpatterns = [
     url(r'^users/$', UserListViewSet.as_view({'get': 'list'}), name='user_list'),
