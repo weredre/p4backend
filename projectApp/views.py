@@ -4,14 +4,17 @@ from django.contrib.auth.models import User, Group
 from rest_framework import viewsets
 from rest_framework import permissions
 from .serializers import CharacterSerializer, UserSerializer, GroupSerializer
+
+
 # Create your views here.
-class DogViewSet(viewsets.ModelViewSet):
+class CharacterViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows users to be viewed or edited.
     """
     queryset = Character.objects.all()
     serializer_class = CharacterSerializer
-    permission_classes = [permissions.AllowAny] #Coule be [permissions.IsAuthenticated]
+    permission_classes = [permissions.AllowAny]  # Coule be [permissions.IsAuthenticated]
+
 
 class UserViewSet(viewsets.ModelViewSet):
     """
