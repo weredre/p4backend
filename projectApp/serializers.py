@@ -1,4 +1,5 @@
 from .models import Character
+from .models import ShadowAmp
 from django.contrib.auth.models import User, Group
 from rest_framework import serializers
 
@@ -19,3 +20,9 @@ class GroupSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Group
         fields = ['url', 'name']
+
+
+class ShadowAmpSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = ShadowAmp
+        fields = ['name', 'description']
