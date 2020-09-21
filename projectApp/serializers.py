@@ -1,25 +1,25 @@
 from .models import Character
 from .models import ShadowAmp
-from django.contrib.auth.models import User, Group
+from authentication.models import User
 from rest_framework import serializers
 
 
 class CharacterSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Character
-        fields = ['name', 'STR', 'AGL', 'WILL', 'LOG', 'CHA', 'EDG']
+        fields = ['name', 'STR', 'AGL', 'WILL', 'LOG', 'CHA', 'EDG', 'ShadowAmp', 'user']
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = User
-        fields = ['url', 'username', 'email', 'groups']
+        fields = ['url', 'username', 'email']
 
 
-class GroupSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = Group
-        fields = ['url', 'name']
+# class GroupSerializer(serializers.HyperlinkedModelSerializer):
+#     class Meta:
+#         model = Group
+#         fields = ['url', 'name']
 
 
 class ShadowAmpSerializer(serializers.HyperlinkedModelSerializer):

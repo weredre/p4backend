@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 # import django_heroku
+import datetime
 
 
 
@@ -147,3 +148,7 @@ try:
     django_heroku.settings(locals())
 except:
     pass
+
+# Overriding DRF JWT settings
+JWT_AUTH = {'JWT_EXPIRATION_DELTA': datetime.timedelta(seconds=5184000),
+            'JWT_REFRESH_EXPIRATION_DELTA': datetime.timedelta(days=60)}

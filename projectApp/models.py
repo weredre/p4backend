@@ -1,6 +1,7 @@
 from django.db import models
 from authentication.models import User
 
+
 # Create your models here.
 class Character(models.Model):
     name = models.CharField(max_length=100)
@@ -12,6 +13,7 @@ class Character(models.Model):
     EDG = models.IntegerField()
     ShadowAmp = models.ManyToManyField('ShadowAmp')
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='characters')
+
     class Meta:
         verbose_name_plural = 'characters'
 
