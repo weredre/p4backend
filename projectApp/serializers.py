@@ -25,4 +25,4 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
 class ShadowAmpSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = ShadowAmp
-        fields = ['name', 'description']
+        fields = ['name', 'description', 'id']
