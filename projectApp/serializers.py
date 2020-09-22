@@ -7,7 +7,7 @@ from rest_framework import serializers
 class CharacterSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Character
-        fields = ['name', 'STR', 'AGL', 'WILL', 'LOG', 'CHA', 'EDG', 'ShadowAmp', 'user']
+        fields = ['name', 'STR', 'AGL', 'WILL', 'LOG', 'CHA', 'EDG', 'ShadowAmp', 'user', 'id']
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):

@@ -11,7 +11,7 @@ class Character(models.Model):
     LOG = models.IntegerField()
     CHA = models.IntegerField()
     EDG = models.IntegerField()
-    ShadowAmp = models.ManyToManyField('ShadowAmp')
+    ShadowAmp = models.ManyToManyField('ShadowAmp', blank=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='characters')
 
     class Meta:
